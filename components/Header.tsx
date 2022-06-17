@@ -15,7 +15,7 @@ function Header() {
           <Link href="/" passHref>
             <div className='mr-4 cursor-pointer flex items-center gap-1'>
               <FontAwesomeIcon className='w-5 h-5' icon={faDragon} />
-              <span className='ml-2 text-xl'>Fire Emblem</span>
+              <span className='ml-2 text-xl'>Import Data</span>
             </div>
           </Link>
           {/* <div className='hidden md:block'>
