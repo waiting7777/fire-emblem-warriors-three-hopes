@@ -1,17 +1,22 @@
 import Head from 'next/head'
 import Hero from '../components/Hero'
+import Image from 'next/image'
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>聖火降魔錄 Fire Emblem</title>
-        <meta name="description" content="聖火降魔錄 Fire Emblem 資料網站" />
+        <title>Import Data - The Modern Gaming Data Resource</title>
+        <meta name="description" content="Import Data - The Modern Gaming Data Resource" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='container mx-auto'>
-        <Hero />
-        <h1 className='text-red-500'>聖火降魔錄 Fire Emblem</h1>
+      <Hero />
+      <div className='container mx-auto p-6 min-h-screen'>
+        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+          <div className='aspect-video'>
+            <Image src='/images/fire-emblem.jpg' alt='Fire emblem warriors three hopes' width={1048} height={589} />
+          </div>
+        </div>
       </div>
     </div>
   )
