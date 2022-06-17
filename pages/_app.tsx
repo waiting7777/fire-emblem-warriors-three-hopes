@@ -7,6 +7,18 @@ import { GA_TRACKING_ID, pageView } from '../libs/gtag'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
+import * as Sentry from '@sentry/react'
+import { BrowserTracing } from '@sentry/tracing'
+
+Sentry.init({
+  dsn: 'https://e53518a74188415ca4b0d36b6b2f8057@o413621.ingest.sentry.io/6510032',
+  integrations: [new BrowserTracing()],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()

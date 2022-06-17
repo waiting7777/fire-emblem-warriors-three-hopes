@@ -4,7 +4,7 @@ const Few = () => {
     <button
       type="button"
       onClick={() => {
-        throw new Error("Sentry Frontend Error");
+        throw new Error("Sentry Frontend Error production");
       }}
     >
       Throw error
