@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import { GA_TRACKING_ID, pageView } from '../libs/gtag'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -31,23 +32,22 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Import Data - The Modern Gaming Data Resource" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <script
-          async
+      </Head>
+      <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          strategy="afterInteractive"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
+
           gtag('config', '${GA_TRACKING_ID}', {
             page_path: window.location.pathname,
           });
-        `,
-          }}
-        />
-      </Head>
+        `}
+      </Script>
       <Header />
       <Component {...pageProps} />
       <Footer />

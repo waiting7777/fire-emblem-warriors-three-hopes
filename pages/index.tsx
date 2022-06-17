@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Hero from '../components/Hero'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -12,10 +13,12 @@ export default function Home() {
       </Head>
       <Hero />
       <div className='container mx-auto p-6 min-h-screen'>
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-          <div className='aspect-video'>
-            <Image src='/images/fire-emblem.jpg' alt='Fire emblem warriors three hopes' width={1048} height={589} />
-          </div>
+        <div className="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer">
+          <Link href="/few">
+            <div className='aspect-video'>
+              <Image src='/images/fire-emblem.jpg' alt='Fire emblem warriors three hopes' width={1048} height={589} />
+            </div>
+          </Link>
         </div>
       </div>
     </div>
