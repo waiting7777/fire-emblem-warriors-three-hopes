@@ -5,6 +5,13 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+      },
+      center: true,
+    },
     extend: {
       colors: {
         gray: {

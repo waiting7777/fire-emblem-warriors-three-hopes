@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      <div className='container mx-auto p-6 min-h-screen'>
+      <div className='container py-12 min-h-screen'>
         <div className="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer">
           <Link href="/few">
             <div className='aspect-video'>
