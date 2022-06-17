@@ -3,8 +3,22 @@ import type { AppProps } from 'next/app'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Footer from '../components/Footer'
+import { GA_TRACKING_ID, pageView } from '../libs/gtag'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      pageView(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <>
       <Head>
@@ -17,6 +31,22 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Import Data - The Modern Gaming Data Resource" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
+        `,
+          }}
+        />
       </Head>
       <Header />
       <Component {...pageProps} />
