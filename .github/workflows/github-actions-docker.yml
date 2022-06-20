@@ -28,7 +28,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: waiting7777/fire-emblem-warriors-three-hopes
+          images: waiting7777/import-data
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
@@ -45,9 +45,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: | 
-            docker stop $(docker ps -aq  --filter "ancestor=waiting7777/fire-emblem-warriors-three-hopes:main")
-            docker rm $(docker ps -aq  --filter "ancestor=waiting7777/fire-emblem-warriors-three-hopes:main")
-            docker pull waiting7777/fire-emblem-warriors-three-hopes:main
-            cd /home/Project/fire-emblem-warriors-three-hopes/
+            docker stop $(docker ps -aq  --filter "ancestor=waiting7777/import-data:main")
+            docker rm $(docker ps -aq  --filter "ancestor=waiting7777/import-data:main")
+            docker pull waiting7777/import-data:main
+            cd /home/Project/import-data/
             ls -l
-            docker run --env-file .env -d -t -p 80:3000 waiting7777/fire-emblem-warriors-three-hopes:main
+            docker run --env-file .env -d -t -p 80:3000 waiting7777/import-data:main
