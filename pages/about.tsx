@@ -42,6 +42,10 @@ const about = () => {
           <br/><br/>
           如果覺得本站資料對遊戲有幫助，歡迎請本站喝杯咖啡。
           <br/><br/>
+          <button className="bg-green-500 text-center py-2 text-white w-[240px] inline-block leading-none shadow-md rounded-lg">
+            <a href="https://payment.opay.tw/Broadcaster/Donate/5CA79D0E8EB2B42ACB52A3860952EB07" target="_blank" rel="noreferrer">請喝咖啡 (台灣)</a>
+          </button>
+          <br/><br/>
           BTC: 3AKMsgUVU4r9EfntLeMhH2GcbGC3345P8H
           <br/>
           ETH: 0x714d7F319f54cF3087A0a90bed2704cc0d134715
