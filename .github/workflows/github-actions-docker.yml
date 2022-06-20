@@ -47,6 +47,7 @@ jobs:
           script: | 
             docker stop $(docker ps -aq  --filter "ancestor=waiting7777/import-data:main")
             docker rm $(docker ps -aq  --filter "ancestor=waiting7777/import-data:main")
+            docker rmi waiting7777/import-data:main
             docker pull waiting7777/import-data:main
             cd /home/Project/import-data/
             ls -l
