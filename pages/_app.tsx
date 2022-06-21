@@ -24,7 +24,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      pageView(url)
+      if (process.env.NODE_ENV === 'production') {
+        pageView(url)
+      }
     }
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
