@@ -2,8 +2,19 @@ import Head from 'next/head'
 import Hero from '../components/Hero'
 import Image from 'next/image'
 import Link from 'next/link'
+import useSWR from 'swr';
 
 export default function Home() {
+  const { data } = useSWR(
+    `/api/page-views?slug=/`,
+    async url => {
+      const res = await fetch(url);
+      return res.json();
+    },
+    { revalidateOnFocus: false }
+  );
+  const views = data?.pageViews || 0;
+
   return (
     <div>
       <Head>
