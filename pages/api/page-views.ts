@@ -28,6 +28,7 @@ export default async function handler(
       version: 'v3',
     });
 
+    // @ts-ignore
     const response = await analytics.data.ga.get({
       'end-date': 'today',
       ids: `ga:${process.env.GOOGLE_ANALYTICS_VIEW_ID}`,
@@ -37,6 +38,7 @@ export default async function handler(
       'start-date': startDate,
     });
 
+    // @ts-ignore
     const pageViews = response?.data?.totalsForAllResults['ga:pageviews'];
   
     res.status(200).json({
