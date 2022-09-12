@@ -31,7 +31,7 @@ function Header() {
           <FontAwesomeIcon className='w-5 h-5' icon={faBars} />
         </div>
         <div className={classNames({ '-translate-y-full hidden': !menuOpen }, 'text-white w-full grid absolute left-0 top-12 p-4 bg-black text-xl gap-4 transition z-10')}>
-          <div className='h-12 flex items-center px-4'>
+          <div className='h-8 md:h-12 flex items-center px-4'>
             <Link href="/about">
               關於
             </Link>

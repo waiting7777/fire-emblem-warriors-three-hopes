@@ -1,0 +1,12 @@
+import Sidebar from "../../components/marvel-snap/Sidebar"
+
+const Few = () => {
+  return (
+    <div className="mx-auto min-h-screen grid grid-cols-[250px_1fr]">
+      <Sidebar />
+      <div>home</div>
+    </div>
+  )
+}
+
+export default Few
