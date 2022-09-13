@@ -1,12 +1,15 @@
-import Sidebar from "../../components/marvel-snap/Sidebar"
+import Layout from "../../components/marvel-snap/Layout"
+import type { NextPageWithLayout } from '../_app'
+import type { ReactElement } from 'react'
 
-const Few = () => {
+const MarvelSnap: NextPageWithLayout = () => {
   return (
-    <div className="mx-auto min-h-screen grid grid-cols-[250px_1fr]">
-      <Sidebar />
-      <div>home</div>
-    </div>
+    <div>home</div>
   )
 }
 
-export default Few
+export const MarvelSnapPageLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+
+MarvelSnap.getLayout = MarvelSnapPageLayout;
+
+export default MarvelSnap

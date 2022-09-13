@@ -9,6 +9,8 @@ import { useRouter } from 'next/router'
 import Script from 'next/script'
 import * as Sentry from '@sentry/react'
 import { BrowserTracing } from '@sentry/tracing'
+import type { ReactElement, ReactNode } from 'react'
+import type { NextPage } from 'next'
 
 Sentry.init({
   dsn: 'https://e53518a74188415ca4b0d36b6b2f8057@o413621.ingest.sentry.io/6510032',
@@ -20,8 +22,18 @@ Sentry.init({
   tracesSampleRate: 1.0,
 })
 
-function MyApp({ Component, pageProps }: AppProps) {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const router = useRouter()
+  const getLayout = Component.getLayout || ((page) => page)
+
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       if (process.env.NODE_ENV === 'production') {
@@ -60,7 +72,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         `}
       </Script>
       <Header />
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
       <Footer />
     </>
   )

@@ -26,13 +26,6 @@ export default function Home() {
       <div className='container py-12 min-h-screen'>
         <div className='grid md:grid-cols-3 gap-8'>
           <div className="rounded overflow-hidden shadow-lg cursor-pointer">
-            <Link href="/few">
-              <div>
-                <Image src='/images/fire-emblem.jpg' alt='Fire emblem warriors three hopes' width={1048} height={589} />
-              </div>
-            </Link>
-          </div>
-          <div className="rounded overflow-hidden shadow-lg cursor-pointer">
             <Link href="/marvel-snap">
               <div>
                 <Image src='/images/marvel-snap/hero.jpeg' alt='Fire emblem warriors three hopes' width={1048} height={589} />

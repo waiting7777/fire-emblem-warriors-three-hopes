@@ -11,6 +11,13 @@ datasource db {
 }
 
 model Hero {
-  id   Int    @id @default(autoincrement())
-  name String
+  id          Int     @id @default(autoincrement())
+  name        String
+  cost        Int
+  power       Int
+  abilities   String
+  description String
+  collectible Boolean
+  category    String
+  source      String
 }

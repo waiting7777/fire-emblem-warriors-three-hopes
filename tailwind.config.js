@@ -13,6 +13,9 @@ module.exports = {
       center: true,
     },
     extend: {
+      fontFamily: {
+        marvel: ['Ultimatum Bold Italic', 'Helvetica Neue', 'Arial',' Sans-Serif']
+      },
       colors: {
         gray: {
           main: "#a0aec0",
