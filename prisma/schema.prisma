@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Hero {
+model MS_Hero {
   id          Int     @id @default(autoincrement())
   name        String
   cost        Int
@@ -20,4 +20,10 @@ model Hero {
   collectible Boolean
   category    String
   source      String
+}
+
+model TI_Character {
+  id     Int    @id @default(autoincrement())
+  name   String
+  season String
 }

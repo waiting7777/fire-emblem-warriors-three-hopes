@@ -1,8 +1,8 @@
 import { getAllHeros } from '../../models/mavel-snap/hero';
 import { MarvelSnapPageLayout } from './index'
-import type { Hero } from '@prisma/client';
+import type { MS_Hero } from '@prisma/client';
 
-const Cards = ({ heros }: { heros: Hero[] }) => {
+const Cards = ({ heros }: { heros: MS_Hero[] }) => {
   return (
     <div>{JSON.stringify(heros)}</div>
   )
