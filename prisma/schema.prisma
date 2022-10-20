@@ -15,11 +15,20 @@ model MS_Hero {
   name        String
   cost        Int
   power       Int
-  abilities   String
+  ability     String
   description String
+  flavor      String
   collectible Boolean
   category    String
   source      String
+}
+
+model MS_Location {
+  id               Int    @id @default(autoincrement())
+  name             String
+  description      String
+  name_zhtw        String
+  description_zhtw String
 }
 
 model TI_Character {

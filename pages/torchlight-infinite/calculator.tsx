@@ -2,7 +2,7 @@ import { TorchlightInfinitePageLayout } from './index'
 
 const Calculator = () => {
   return (
-    <div>calculator</div>
+    <div>calculator {process.env.NODE_ENV}</div>
   )
 }
 

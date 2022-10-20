@@ -1,4 +1,4 @@
-import { faHome, faFeatherPointed } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faFeatherPointed, faLocationPin } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ActiveLink from '../ActiveLink'
 import Image from 'next/image'
@@ -20,6 +20,12 @@ const Sidebar = () => {
         <div className='flex items-center gap-2 px-3 h-8 border-l-4 border-transparent cursor-pointer hover:bg-red-main hover:text-white'>
         <FontAwesomeIcon className='w-4 h-4' icon={faFeatherPointed} />
           <span>Cards</span>
+        </div>
+      </ActiveLink>
+      <ActiveLink href="/marvel-snap/locations" activeClassName='text-red-main border-l-4 border-red-main'>
+        <div className='flex items-center gap-2 px-3 h-8 border-l-4 border-transparent cursor-pointer hover:bg-red-main hover:text-white'>
+        <FontAwesomeIcon className='w-4 h-4' icon={faLocationPin} />
+          <span>Locations</span>
         </div>
       </ActiveLink>
     </div>

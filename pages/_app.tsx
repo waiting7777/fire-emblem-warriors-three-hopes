@@ -6,7 +6,6 @@ import Footer from '../components/Footer'
 import { GA_TRACKING_ID, pageview } from '../libs/gtag'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Script from 'next/script'
 import * as Sentry from '@sentry/react'
 import { BrowserTracing } from '@sentry/tracing'
 import type { ReactElement, ReactNode } from 'react'
@@ -36,7 +35,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      if (process.env.NODE_ENV === 'production') {
+      if (process.env.NODE_ENV !== 'development') {
         pageview(url, document.title);
       }
     }
@@ -58,19 +57,23 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Import Data - The Modern Gaming Data Resource" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      </Head>
-      <Script
+        <script
+          async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-        {`
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
           window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
+          function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_TRACKING_ID}');
-        `}
-      </Script>
+          gtag('config', '${GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
+        `,
+          }}
+        />
+      </Head>
       <Header />
       {getLayout(<Component {...pageProps} />)}
       <Footer />
