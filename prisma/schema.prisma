@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model MS_Hero {
+model MSHero {
   id          Int     @id @default(autoincrement())
   name        String
   cost        Int
@@ -23,7 +23,7 @@ model MS_Hero {
   source      String
 }
 
-model MS_Location {
+model MSLocation {
   id               Int    @id @default(autoincrement())
   name             String
   description      String
@@ -31,7 +31,7 @@ model MS_Location {
   description_zhtw String
 }
 
-model TI_Character {
+model TICharacter {
   id     Int    @id @default(autoincrement())
   name   String
   season String

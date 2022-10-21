@@ -1,8 +1,8 @@
 import { getAllLocations } from '../../models/mavel-snap/location';
 import { MarvelSnapPageLayout } from './index'
-import type { MS_Location } from '@prisma/client';
+import type { MSLocation } from '@prisma/client';
 
-const Locations = ({ locations }: { locations: MS_Location[] }) => {
+const Locations = ({ locations }: { locations: MSLocation[] }) => {
   return (
     <div>{JSON.stringify(locations)}</div>
   )
