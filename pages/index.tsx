@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Import Data - The Modern Gaming Data Resource</title>
-        <meta name="description" content="Import Data - The Modern Gaming Data Resource" />
+        <title>Import Data - The Gaming Data Resource</title>
+        <meta name="description" content="Import Data - The Gaming Data Resource" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />

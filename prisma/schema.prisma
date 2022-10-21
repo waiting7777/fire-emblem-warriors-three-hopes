@@ -13,6 +13,7 @@ datasource db {
 model MSHero {
   id          Int     @id @default(autoincrement())
   name        String
+  name_zhtw   String
   cost        Int
   power       Int
   ability     String

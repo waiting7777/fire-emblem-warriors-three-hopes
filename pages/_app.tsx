@@ -48,14 +48,14 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <Head>
-        <title>Import Data - The Modern Gaming Data Resource</title>
-        <meta name="description" content="Import Data - The Modern Gaming Data Resource" />
-        <meta property="og:title" content="Import Data - The Modern Gaming Data Resource" />
-        <meta property="og:description" content="Import Data - The Modern Gaming Data Resource" />
+        <title>Import Data - The Gaming Data Resource</title>
+        <meta name="description" content="Import Data - The Gaming Data Resource" />
+        <meta property="og:title" content="Import Data - The Gaming Data Resource" />
+        <meta property="og:description" content="Import Data - The Gaming Data Resource" />
         <meta property="og:image" content="" />
         <meta property="og:url" content="https://import-data.org" />
         <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Import Data - The Modern Gaming Data Resource" />
+        <meta property="og:site_name" content="Import Data - The Gaming Data Resource" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <script
           async
