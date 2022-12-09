@@ -10,30 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model MSHero {
-  id          Int     @id @default(autoincrement())
-  name        String
+model TFT_CHAMPION {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
   name_zhtw   String
   cost        Int
-  power       Int
+  hp          Int
+  ar          Int
+  mr          Int
+  ad          Int
+  as          Int
+  cri         Int
+  range       Int
+  init_mana   Int
+  mana        Int
+  ability_key String
   ability     String
-  description String
-  flavor      String
-  collectible Boolean
-  category    String
-  source      String
-}
-
-model MSLocation {
-  id               Int    @id @default(autoincrement())
-  name             String
-  description      String
-  name_zhtw        String
-  description_zhtw String
-}
-
-model TICharacter {
-  id     Int    @id @default(autoincrement())
-  name   String
-  season String
+  origin      String
+  class       String
 }
